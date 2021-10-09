@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.commerce.service.member.dao.MemberAddressDao">
+
+    <select id="findByMemberId" resultType="MemberAddressDto" parameterType="java.lang.String">
+        SELECT
+            id            as id,
+            member_id     as memberId,
+            province      as province,
+            city          as city,
+            district      as district,
+            postal_code   as postalCode,
+            address_line  as addressLine,
+            notes         as notes
+        FROM 
+            t_mem_member_address
+        WHERE 
+            member_id = #{memberId}
+    </select>
+
+    <insert id="addMemberAddress" parameterType="MemberAddressDto" useGeneratedKeys="true">
+       <selectKey keyProperty="id" resultType="java.lang.Long" order="AFTER">
+        SELECT LAST_INSERT_ID() as id
+       </selectKey>
+        INSERT INTO t_mem_member_address(
+               member_id, 
+               province, 
+               city, 
+               district, 
+               postal_code, 
+               address_line,
+               notes
+        )
+        VALUES (
+               #{memberId}, 
+               #{province}, 
+               #{city}, 
+               #{district}, 
+               #{postalCode}, 
+               #{addressLine},
+               #{notes}
+        );
+    </insert>
+    
+    <insert id="updateMemberAddress" parameterType="MemberAddressDto" useGeneratedKeys="true">
+        UPDATE 
+            t_mem_member_address
+        SET 
+            <if test="memberId != null and memberId != ''">
+            member_id = #{memberId}, 
+            </if>
+            <if test="province != null and province != ''">
+            province = #{province}, 
+            </if>
+            <if test="city != null and city != ''">
+            city = #{city},
+            </if>
+            <if test="district != null and district != ''">
+            district = #{district},
+            </if>
+            <if test="postalCode != null and postalCode != ''">
+            postal_code = #{postalCode},
+            </if>
+            <if test="addressLine != null and addressLine != ''">
+            address_line = #{addressLine},
+            </if>
+            <if test="notes != null and notes != ''">
+            notes = #{notes},
+            </if>
+            id = id
+        WHERE
+            id = #{id} and
+            member_id = #{memberId}
+    </insert>
+</mapper>
