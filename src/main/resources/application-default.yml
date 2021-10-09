@@ -1,0 +1,5 @@
+# Eureka Discovery Client Producer
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8103/eureka
