@@ -11,9 +11,9 @@ import com.metranet.finbox.service.member.dao.MemberDao;
 import com.metranet.finbox.service.member.dto.MemberDto;
 
 @RestController
-public class MemberServiceApi {
+public class MemberApi {
 
-    Logger logger = LoggerFactory.getLogger(MemberServiceApi.class);
+    Logger logger = LoggerFactory.getLogger(MemberApi.class);
 
     @Autowired
     MemberDao memberDao;

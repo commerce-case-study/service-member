@@ -1,3 +1,7 @@
+# Server
+server:
+  port: 60101
+
 # Eureka Discovery Client Producer
 eureka:
   client:

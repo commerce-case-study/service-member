@@ -1,11 +1,3 @@
-# Server
-server:
-  port: 60101
-
-# Logging
-logging:
-  config: classpath:log/logback-local.xml
-  
 # Spring Config, Persistance, Database
 spring:
   application:
