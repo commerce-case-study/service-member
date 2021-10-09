@@ -1,4 +1,4 @@
-package com.metranet.finbox.service.member.api;
+package com.commerce.service.member.api;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.metranet.finbox.service.member.dao.ClientDao;
-import com.metranet.finbox.service.member.dto.ClientDto;
+import com.commerce.service.member.dao.ClientDao;
+import com.commerce.service.member.dto.ClientDto;
 
 @RestController
 public class ClientApi {

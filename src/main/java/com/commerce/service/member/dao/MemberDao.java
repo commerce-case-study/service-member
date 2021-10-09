@@ -1,8 +1,8 @@
-package com.metranet.finbox.service.member.dao;
+package com.commerce.service.member.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.metranet.finbox.service.member.dto.MemberDto;
+import com.commerce.service.member.dto.MemberDto;
 
 @Mapper
 public interface MemberDao {

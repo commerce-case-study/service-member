@@ -1,4 +1,4 @@
-package com.metranet.finbox.service.member;
+package com.commerce.service.member;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

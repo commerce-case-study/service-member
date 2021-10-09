@@ -1,4 +1,4 @@
-package com.metranet.finbox.service.member.dto;
+package com.commerce.service.member.dto;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.metranet.finbox.service.member.entities;
+package com.commerce.service.member.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
