@@ -18,5 +18,5 @@ spring:
 # Data Access Object
 mybatis:
   mapper-locations: classpath*:/query/sql-*.xml
-  type-aliases-package: com.metranet.finbox.service.member.dto
+  type-aliases-package: com.commerce.service.member.dto
 

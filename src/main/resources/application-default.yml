@@ -1,9 +1,10 @@
 # Server
 server:
-  port: 60101
+  port: 6101
 
 # Eureka Discovery Client Producer
 eureka:
   client:
+    register-with-eureka: true
     serviceUrl:
       defaultZone: http://localhost:8103/eureka

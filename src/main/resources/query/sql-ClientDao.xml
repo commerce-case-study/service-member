@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.metranet.finbox.service.member.dao.ClientDao">
+<mapper namespace="com.commerce.service.member.dao.ClientDao">
 
     <select id="findByClientId" resultType="ClientDto" parameterType="java.lang.String">
         SELECT
