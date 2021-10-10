@@ -20,7 +20,7 @@
             member_id = #{memberId}
     </select>
 
-    <select id="findByMemberAddressId" resultType="MemberAddressDto" parameterType="java.lang.String">
+    <select id="findByMemberAddressId" resultType="MemberAddressDto" parameterType="java.lang.Long">
         SELECT
             id            as id,
             name          as name,
