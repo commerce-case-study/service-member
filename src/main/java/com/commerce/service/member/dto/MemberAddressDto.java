@@ -9,6 +9,8 @@ public class MemberAddressDto {
     
     private Long memberId;
     
+    private String name;
+    
     private String province;
     
     private String city;

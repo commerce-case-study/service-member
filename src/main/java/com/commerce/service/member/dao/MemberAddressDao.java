@@ -14,4 +14,6 @@ public interface MemberAddressDao {
     Long updateMemberAddress(MemberAddressDto memberAddress);
     
     List<MemberAddressDto> findByMemberId(Long memberId);
+    
+    MemberAddressDto findByMemberAddressId(Long id);
 }

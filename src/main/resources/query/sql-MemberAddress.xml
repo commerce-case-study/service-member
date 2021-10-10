@@ -6,6 +6,7 @@
     <select id="findByMemberId" resultType="MemberAddressDto" parameterType="java.lang.String">
         SELECT
             id            as id,
+            name          as name,
             member_id     as memberId,
             province      as province,
             city          as city,
@@ -15,16 +16,34 @@
             notes         as notes
         FROM 
             t_mem_member_address
-        WHERE 
+        WHERE
             member_id = #{memberId}
     </select>
 
+    <select id="findByMemberAddressId" resultType="MemberAddressDto" parameterType="java.lang.String">
+        SELECT
+            id            as id,
+            name          as name,
+            member_id     as memberId,
+            province      as province,
+            city          as city,
+            district      as district,
+            postal_code   as postalCode,
+            address_line  as addressLine,
+            notes         as notes
+        FROM 
+            t_mem_member_address
+        WHERE
+            id = #{id}
+    </select>
+    
     <insert id="addMemberAddress" parameterType="MemberAddressDto" useGeneratedKeys="true">
        <selectKey keyProperty="id" resultType="java.lang.Long" order="AFTER">
         SELECT LAST_INSERT_ID() as id
        </selectKey>
         INSERT INTO t_mem_member_address(
-               member_id, 
+               member_id,
+               name,
                province, 
                city, 
                district, 
@@ -34,6 +53,7 @@
         )
         VALUES (
                #{memberId}, 
+               #{name},
                #{province}, 
                #{city}, 
                #{district}, 
@@ -49,6 +69,9 @@
         SET 
             <if test="memberId != null and memberId != ''">
             member_id = #{memberId}, 
+            </if>
+            <if test="name != null and name != ''">
+            name = #{name}, 
             </if>
             <if test="province != null and province != ''">
             province = #{province}, 

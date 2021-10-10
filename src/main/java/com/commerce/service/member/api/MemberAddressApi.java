@@ -22,9 +22,14 @@ public class MemberAddressApi {
     @Autowired
     MemberAddressDao memberAddressDao;
     
-    @GetMapping(value = "findByMemberId/{memberId}", produces = "application/json")
-    public List<MemberAddressDto> findByEmailOrUsername(@PathVariable("memberId") Long memberId) {
+    @GetMapping(value = "findMemberAddressByMemberId/{memberId}", produces = "application/json")
+    public List<MemberAddressDto> findMemberAddressByMemberId(@PathVariable("memberId") Long memberId) {
         return memberAddressDao.findByMemberId(memberId);
+    }
+    
+    @GetMapping(value = "findMemberAddressById/{id}", produces = "application/json")
+    public MemberAddressDto findMemberAddressById(@PathVariable("id") Long id) {
+        return memberAddressDao.findByMemberAddressId(id);
     }
     
     @PostMapping(value = "addMemberAddress", consumes = "application/json")

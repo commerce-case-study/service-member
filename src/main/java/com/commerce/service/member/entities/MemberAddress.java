@@ -20,6 +20,8 @@ public class MemberAddress {
     @Column(name = "member_id", nullable = false)
     private Long memberId;
     
+    private String name;
+    
     private String province;
     
     private String city;
